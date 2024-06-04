@@ -13,15 +13,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $db = new FuncionarioSeeder();
-        $db->run();
-
-        $db = new UserSeeder();
-        $db->run();
-
-        $db = new ClienteSeeder();
-        $db->run();
-
+        $this->call([
+            UserSeeder::class,
+            ClienteSeeder::class,
+            ExtraSeeder::class,
+            SaborSeeder::class,
+            TamanhoSeeder::class,
+            FuncionarioSeeder::class,
+        ]);
         
     }
 }
